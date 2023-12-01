@@ -1,5 +1,6 @@
 import math
 
+#constant
 x=12**3
 y=45**6
 n=78**9
@@ -11,6 +12,8 @@ seq=[0]
 seq.append(x)
 seq.append(y)
 print(seq)
+
+#calculate the next U
 
 def nextu(n):
     global seq,r
@@ -26,6 +29,7 @@ def nextu(n):
         pre_loc=1
         pre_2_loc=0
     #print(pre_loc,pre_2_loc)
+    
     next=r*seq[pre_loc]-seq[pre_2_loc]
     
     #print("term",n+1,"is")
