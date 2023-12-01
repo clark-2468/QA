@@ -1,5 +1,5 @@
 import math
-
+import time
 x=12**3
 y=45**6
 n=78**9
@@ -34,12 +34,15 @@ def nextu(n):
 for i in range (3,n+1,3):
     #3 4 5
     #6 7 8
-    #print(seq)
+    
     for i2 in range(3):
-        
+    
         re=nextu(i2)
         seq[i2]=re
         #u=u+1
+    print(i,i+1,i+2)
+    print(seq)
+    time.sleep(1)
 
 #0=u3
 #1=u4
