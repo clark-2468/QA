@@ -3,6 +3,7 @@ import time
 x=12**3
 y=45**6
 n=78**9
+print("n=",n)
 sqrt5=math.sqrt(5)
 r=1+sqrt5
 r=r/2
@@ -40,9 +41,9 @@ for i in range (3,n+1,3):
         re=nextu(i2)
         seq[i2]=re
         #u=u+1
-    print(i,i+1,i+2)
-    print(seq)
-    time.sleep(1)
+    #print(i,i+1,i+2)
+    #print(seq)
+    #time.sleep(1)
 
 #0=u3
 #1=u4
