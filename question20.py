@@ -5,11 +5,13 @@ current_num=[]
 #generator
 #make 6 digits number using 1,1,2,2,3,3
 valid_counter=0
+
 for trying_every_num in range(111111,332299):
     current_num=str(trying_every_num)
     #print(current_num)
     valid=True
     valid1=True
+
     #made of 1 1 2  2 3 3
     for counting in range (6):
         checking=int(current_num[counting])
@@ -24,6 +26,7 @@ for trying_every_num in range(111111,332299):
     
     #no numbers appear more than twice
     if valid1==True:
+
         for counting in range (6):
             checking=int(current_num[counting])
             if current_num.count(str(checking))>2:
