@@ -41,3 +41,4 @@ for n in range(1,len(seq)):
         print("got it")
         print(area)
         
+#not working

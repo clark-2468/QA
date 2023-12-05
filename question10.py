@@ -33,3 +33,5 @@ for i in range(100,300,1):
     i=i/100
     print(i)
     F(i)
+
+#working
