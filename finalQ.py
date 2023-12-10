@@ -1,7 +1,7 @@
 #code for rules first
 #constant
-no_of_teams=0
-no_of_players_per_team=0
+no_of_teams=3
+no_of_players_per_team=3
 no_of_boards= no_of_players_per_team
 letters= "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -27,10 +27,20 @@ class Player:
         self.team = team
         self.opponents = opponents
 
+all_players=[]
+
 for team_counter in range (1, no_of_teams+1):
     
     teamname= letters[team_counter-1]
     for player_counter in range (1, no_of_players_per_team+1):
         handle= teamname+str(player_counter)
+        all_players.append(handle)
+
+
+print(all_players)
+
+#all the players are kept in the basement
+basement = {name: Player(name=name) for name in all_players}
+
         
     
