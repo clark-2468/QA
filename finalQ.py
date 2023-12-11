@@ -23,14 +23,14 @@ def ceiling(input_number):
 
 #the core class
 class Player:
-    def __init__(self, name, team, opponents,rounds_upfloat,rounds_downfloat):
+    def __init__(self, name, team, opponents,rounds_upfloat,rounds_downfloat, white_count=0, black_count=0):
         self.name = name
         self.team = team
         self.opponents = opponents
         self.rounds_upfloat=rounds_upfloat
         self.rounds_downfloat=rounds_downfloat
-        self.white_count=0
-        self.black_count=0
+        self.white_count=white_count
+        self.black_count=black_count
 
     #def __str__(self):
         #return f"{self.name}({self.team})"
@@ -55,11 +55,11 @@ for team_counter in range (1, no_of_teams+1):
         read1= file_handle.readline()
 
         print(read1)
-        oppo1= read1[2:4]
+        oppo1= read1[3:5]
         opponents_for_this_player[0]= oppo1
-        oppo2= read1[4:6]
+        oppo2= read1[5:7]
         opponents_for_this_player[1]= oppo2
-        oppo3= read1[6:8]
+        oppo3= read1[7:9]
         opponents_for_this_player[2]= oppo3
         print(opponents_for_this_player)
         
@@ -67,7 +67,7 @@ for team_counter in range (1, no_of_teams+1):
 
 
 
-        p1= Player(name=handle, team=teamname, opponents=opponents_for_this_player, rounds_upfloat=read1[8], rounds_downfloat=read1[9])
+        p1= Player(name=handle, team=teamname, opponents=opponents_for_this_player, rounds_upfloat=read1[10], rounds_downfloat=read1[11], white_count=int(read1[12]), black_count=int(read1[13]))
         all_objects.append(p1)
 
 file_handle.close()
