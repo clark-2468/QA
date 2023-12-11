@@ -27,8 +27,8 @@ class Player:
         self.name = name
         self.team = team
         self.opponents = opponents
-        self.rounds_upfloat=''
-        self.rounds_downfloat=''
+        self.rounds_upfloat=rounds_upfloat
+        self.rounds_downfloat=rounds_downfloat
 
     #def __str__(self):
         #return f"{self.name}({self.team})"
@@ -61,12 +61,11 @@ for team_counter in range (1, no_of_teams+1):
         opponents_for_this_player[2]= oppo3
         print(opponents_for_this_player)
         
-        rounds_upfloat=read1[8]
-        rounds_downfloat=read1[9]
 
-        print(rounds_upfloat)
 
-        p1= Player(name=handle, team=teamname, opponents=opponents_for_this_player, rounds_upfloat=rounds_upfloat, rounds_downfloat=rounds_downfloat)
+
+
+        p1= Player(name=handle, team=teamname, opponents=opponents_for_this_player, rounds_upfloat=read1[8], rounds_downfloat=read1[9])
         all_objects.append(p1)
 
 file_handle.close()
