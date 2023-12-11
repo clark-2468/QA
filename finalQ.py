@@ -67,7 +67,7 @@ for team_counter in range (1, no_of_teams+1):
 
 
 
-        p1= Player(name=handle, team=teamname, opponents=opponents_for_this_player, rounds_upfloat=read1[10], rounds_downfloat=read1[11], white_count=int(read1[12]), black_count=int(read1[13]))
+        p1= Player(name=handle, team=teamname, opponents=opponents_for_this_player, rounds_upfloat=read1[10], rounds_downfloat=read1[11], white_count=int(read1[13]), black_count=int(read1[14]))
         all_objects.append(p1)
 
 file_handle.close()
@@ -83,8 +83,12 @@ testinghandle= all_objects[0]
 print(testinghandle.opponents)
 print(testinghandle.team)
 print(testinghandle.name)
+print("upordown")
 print(testinghandle.rounds_upfloat)
 print(testinghandle.rounds_downfloat)
+print("whiteblack")
+print(testinghandle.white_count)
+print(testinghandle.black_count)
 
 
 
