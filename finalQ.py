@@ -23,13 +23,15 @@ def ceiling(input_number):
 
 #the core class
 class Player:
-    def __init__(self, name, team, opponents):
+    def __init__(self, name, team, opponents,rounds_upfloat,rounds_downfloat):
         self.name = name
         self.team = team
         self.opponents = opponents
+        self.rounds_upfloat=''
+        self.rounds_downfloat=''
 
-    def __str__(self):
-        return f"{self.name}({self.team})"
+    #def __str__(self):
+        #return f"{self.name}({self.team})"
         
 
 
@@ -49,7 +51,8 @@ for team_counter in range (1, no_of_teams+1):
         all_players.append(handle)
 
         read1= file_handle.readline()
-        #print(read1)
+
+        print(read1)
         oppo1= read1[2:4]
         opponents_for_this_player[0]= oppo1
         oppo2= read1[4:6]
@@ -58,8 +61,12 @@ for team_counter in range (1, no_of_teams+1):
         opponents_for_this_player[2]= oppo3
         print(opponents_for_this_player)
         
+        rounds_upfloat=read1[8]
+        rounds_downfloat=read1[9]
 
-        p1= Player(name=handle, team=teamname, opponents=opponents_for_this_player)
+        print(rounds_upfloat)
+
+        p1= Player(name=handle, team=teamname, opponents=opponents_for_this_player, rounds_upfloat=rounds_upfloat, rounds_downfloat=rounds_downfloat)
         all_objects.append(p1)
 
 file_handle.close()
@@ -73,6 +80,10 @@ print(all_objects)
 
 testinghandle= all_objects[0]
 print(testinghandle.opponents)
+print(testinghandle.team)
+print(testinghandle.name)
+print(testinghandle.rounds_upfloat)
+print(testinghandle.rounds_downfloat)
 
 
 
@@ -107,7 +118,17 @@ def rule12(player_id):
 
     #three rounds, three opponents
 
+def rule3():
+    pass
+    #wth
 
+def rule4():
+    pass
+    #Among the players on any given board, there shall be no more than one up-float or down-float per round.
+
+def rule5():
+    pass
+    #No player shall play the same board number more than once.
 
 Vpass=rule12("A1")
 print(Vpass)
