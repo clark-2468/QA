@@ -6,13 +6,7 @@ no_of_boards= no_of_players_per_team
 letters= "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
-    
-
-
-def rule2(player1, player2):
-    #players do not play against its team mate
-    if player1[0]==player2[0]:
-        return False
+#two operations
     
 def flooring(input_number):
     #the largest integer less than or equal to x
@@ -24,6 +18,10 @@ def ceiling(input_number):
 
     return int(input_number)+1
 
+
+
+
+#the core class
 class Player:
     def __init__(self, name, team, opponents):
         self.name = name
@@ -36,7 +34,7 @@ class Player:
 
 
 
-
+#ini loading section
 all_players=[]#name in Aa format
 all_objects=[]#name in pointer format
 
@@ -66,17 +64,25 @@ for team_counter in range (1, no_of_teams+1):
 
 file_handle.close()
 
+
+
+
+#debug prints
 print(all_players)
 print(all_objects)
 
 testinghandle= all_objects[0]
 print(testinghandle.opponents)
 
-#all the players are kept in the basement
+
+
+
+
+
 #rules
 
-def rule1(player_id):
-    rule1= True
+def rule12(player_id):
+    rule12= True
     #convert player_id to index in the list named all_objects
     index_in_list= all_players.index(player_id)
     #Nobody may play the same opponent twice, nor twice against opponents from the same team
@@ -88,16 +94,22 @@ def rule1(player_id):
         print(oppo_played)
 
         team_played.append(oppo_played[0])
+        #include rule 2 so no friendly fire
+        if team_played==obj1.team:
+            rule12=False
+            break
+    #print(team_played)
     if team_played[0]==team_played[1] or team_played[0]==team_played[2] or team_played[1]==team_played[2]:
-        rule1=False
+        rule12=False
+   
     
-    return rule1
+    return rule12
 
     #three rounds, three opponents
 
 
 
-Vpass=rule1("A1")
+Vpass=rule12("A1")
 print(Vpass)
 
         
