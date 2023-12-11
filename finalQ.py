@@ -27,7 +27,8 @@ class Player:
         self.team = team
         self.opponents = opponents
 
-    def __str__:
+    def __str__(self):
+        return f"{self.name}({self.team})"
         
 
 all_players=[]
@@ -47,7 +48,7 @@ print(all_players)
 print(all_objects)
 
 #all the players are kept in the basement
-basement = {name: Player(name=name) for name in all_players}
+
 
         
     
