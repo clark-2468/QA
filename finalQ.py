@@ -86,15 +86,17 @@ print(testinghandle.rounds_downfloat)
 
 
 
-
+def findindex(player_id):
+    index_in_list= all_players.index(player_id)
+    return index_in_list
 
 
 #rules
 
-def rule12(player_id):
-    rule12= True
+def rule_for_individual(index_in_list):#rule_for_individual
+    rule_for_individual= True
     #convert player_id to index in the list named all_objects
-    index_in_list= all_players.index(player_id)
+    
     #Nobody may play the same opponent twice, nor twice against opponents from the same team
     #just check team
     team_played=[]
@@ -104,16 +106,25 @@ def rule12(player_id):
         print(oppo_played)
 
         team_played.append(oppo_played[0])
+
         #include rule 2 so no friendly fire
+
         if team_played==obj1.team:
-            rule12=False
+            rule_for_individual=False
             break
+
+    #rule 1 simplified    
     #print(team_played)
     if team_played[0]==team_played[1] or team_played[0]==team_played[2] or team_played[1]==team_played[2]:
-        rule12=False
-   
+        rule_for_individual=False
+
+
+    #rule5
+    #No player shall have more than one up-float or more than one down-float.
+    if len(obj1.rounds_upfloat)>1 or len(obj1.rounds_downfloat)>1:
+        rule_for_individual=False
     
-    return rule12
+    return rule_for_individual
 
     #three rounds, three opponents
 
@@ -125,11 +136,10 @@ def rule4():
     pass
     #Among the players on any given board, there shall be no more than one up-float or down-float per round.
 
-def rule5():
-    pass
-    #No player shall play the same board number more than once.
 
-Vpass=rule12("A1")
+    
+
+Vpass=rule_for_individual("A1")
 print(Vpass)
 
         
