@@ -5,7 +5,7 @@ no_of_players_per_team=3
 no_of_boards= no_of_players_per_team
 letters= "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-def load_opponents():
+
     
 
 
@@ -47,6 +47,9 @@ for team_counter in range (1, no_of_teams+1):
         all_players.append(handle)
 
         read1= file_handle.readlines()
+
+        
+
         oppo1= read1[2:4]
         opponents_for_this_player[0]= oppo1
         oppo2= read1[4:6]
@@ -58,12 +61,13 @@ for team_counter in range (1, no_of_teams+1):
         p1= Player(name=handle, team=teamname, opponents=opponents_for_this_player)
         all_objects.append(p1)
 
+file_handle.close()
 
 print(all_players)
 print(all_objects)
 
 p2= all_objects[1]
-print(p2.team)
+print(p2.opponents)
 
 #all the players are kept in the basement
 #rules
@@ -87,6 +91,8 @@ def rule1(player_id):
 
 
 
+Vpass=rule1("A1")
+print(Vpass)
 
         
     
