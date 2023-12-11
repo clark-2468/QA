@@ -34,8 +34,12 @@ class Player:
         return f"{self.name}({self.team})"
         
 
-all_players=[]
-all_objects=[]
+
+
+
+all_players=[]#name in Aa format
+all_objects=[]#name in pointer format
+
 file_handle= open("opponents.txt", "r")
     
 opponents_for_this_player=['','','']
@@ -46,10 +50,8 @@ for team_counter in range (1, no_of_teams+1):
         handle= teamname+str(player_counter)
         all_players.append(handle)
 
-        read1= file_handle.readlines()
-
-        
-
+        read1= file_handle.readline()
+        #print(read1)
         oppo1= read1[2:4]
         opponents_for_this_player[0]= oppo1
         oppo2= read1[4:6]
@@ -67,8 +69,8 @@ file_handle.close()
 print(all_players)
 print(all_objects)
 
-p2= all_objects[0]
-print(p2.opponents)
+testinghandle= all_objects[0]
+print(testinghandle.opponents)
 
 #all the players are kept in the basement
 #rules
@@ -82,10 +84,10 @@ def rule1(player_id):
     team_played=[]
     for countingoppo in range (3):
         obj1=all_objects[index_in_list]
-        oppo= obj1.opponents[countingoppo]
-        print(oppo)
+        oppo_played= obj1.opponents[countingoppo]
+        print(oppo_played)
 
-        team_played.append(oppo[0])
+        team_played.append(oppo_played[0])
     if team_played[0]==team_played[1] or team_played[0]==team_played[2] or team_played[1]==team_played[2]:
         rule1=False
     
