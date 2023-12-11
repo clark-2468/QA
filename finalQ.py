@@ -27,7 +27,11 @@ class Player:
         self.team = team
         self.opponents = opponents
 
+    def __str__:
+        
+
 all_players=[]
+all_objects=[]
 
 for team_counter in range (1, no_of_teams+1):
     
@@ -35,9 +39,12 @@ for team_counter in range (1, no_of_teams+1):
     for player_counter in range (1, no_of_players_per_team+1):
         handle= teamname+str(player_counter)
         all_players.append(handle)
+        p1= Player(name=handle, team=teamname, opponents=[])
+        all_objects.append(p1)
 
 
 print(all_players)
+print(all_objects)
 
 #all the players are kept in the basement
 basement = {name: Player(name=name) for name in all_players}
