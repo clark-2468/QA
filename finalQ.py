@@ -29,6 +29,8 @@ class Player:
         self.opponents = opponents
         self.rounds_upfloat=rounds_upfloat
         self.rounds_downfloat=rounds_downfloat
+        self.white_count=0
+        self.black_count=0
 
     #def __str__(self):
         #return f"{self.name}({self.team})"
@@ -111,22 +113,32 @@ def rule_for_individual(index_in_list):#rule_for_individual
 
         if team_played==obj1.team:
             rule_for_individual=False
+            print("rule2 broken")
             break
 
     #rule 1 simplified    
     #print(team_played)
     if team_played[0]==team_played[1] or team_played[0]==team_played[2] or team_played[1]==team_played[2]:
         rule_for_individual=False
+        print("rule1 broken")
 
 
     #rule5
     #No player shall have more than one up-float or more than one down-float.
     if len(obj1.rounds_upfloat)>1 or len(obj1.rounds_downfloat)>1:
         rule_for_individual=False
+        print("rule5 broken")
+    
+    #rule8
+    # The number of times a player is black shall differ by no more than 1 from the number of times a player is white.
+    dif= abs(obj1.black_count-obj1.white_count)
+    if dif>1:
+        rule_for_individual=False
+        print("rule8 broken")
     
     return rule_for_individual
 
-    #three rounds, three opponents
+   
 
 def rule3():
     pass
@@ -136,10 +148,12 @@ def rule4():
     pass
     #Among the players on any given board, there shall be no more than one up-float or down-float per round.
 
-
+def rule6():
+    pass
     
-
-Vpass=rule_for_individual("A1")
+    
+a=findindex("A1")
+Vpass=rule_for_individual(a)
 print(Vpass)
 
         
