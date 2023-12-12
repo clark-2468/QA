@@ -1,5 +1,5 @@
 file_handle= open("12teambestanswer.txt", "r")
-
+file_handle2= open("12teambestanswer_in_format.txt", "w")
 round_num=0
 
 for lines_counter in range (183):
@@ -22,6 +22,11 @@ for lines_counter in range (183):
     #player1_number= temp[1]
     player2_team= temp[finder+1]
     player2_number= temp[finder+2:]
-    print(str(round_num)+","+player1_team+"."+player1_number+","+player2_team+"."+player2_number)
+    to_write=str(round_num)+","+player1_team+"."+player1_number+","+player2_team+"."+player2_number
+    print(to_write)
+    file_handle2.write(to_write+"\n")
+
+file_handle.close()
+file_handle2.close()
 
 
